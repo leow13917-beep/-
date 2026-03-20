@@ -1573,75 +1573,204 @@
       .battle-media-duo { min-height: 220px; }
     }
     @media (max-width: 768px) {
-      .container { padding: 0 18px; }
-      .section { padding: 60px 0; }
-      #nav { padding: 0 18px; }
+      /* ── 基础 ── */
+      .container { padding: 0 20px; }
+      .section { padding: 64px 0; }
+      #nav { padding: 0 20px; }
       .nav-links, .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
 
-      /* Hero */
-      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
-      .hero-photo-wrap { order: -1; max-width: 240px; margin: 0 auto; }
-      .hero-stats { gap: 22px; flex-wrap: wrap; }
-      .hero-badge { left: -10px; padding: 10px 16px; }
-      .hero-ctas { flex-direction: column; align-items: flex-start; }
-      .hero-ctas .btn { width: 100%; justify-content: center; }
+      /* ── Section 标题 ── */
+      .section-eyebrow { font-size: 10px; letter-spacing: 0.16em; }
+      .section-title { font-size: clamp(24px, 6.5vw, 38px); }
+      .section-lead { font-size: 14px; line-height: 1.75; }
 
-      /* Battle cards */
+      /* ── Hero ── */
+      #hero { min-height: 100svh; padding-top: 64px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 0; padding-top: 20px; }
+
+      /* 照片：小圆形头像，居中置顶 */
+      .hero-photo-wrap {
+        order: -1;
+        width: 130px;
+        margin: 0 auto 24px;
+      }
+      .hero-photo-frame {
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+      }
+      .hero-photo-frame::after { display: none; }
+      .hero-photo-deco-ring { display: none; }
+      .hero-photo-deco-blob { display: none; }
+
+      /* badge 移到圆形底部居中 */
+      .hero-badge {
+        bottom: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 7px 14px;
+        white-space: nowrap;
+        font-size: 12px;
+      }
+      .hero-badge-num { font-size: 16px; }
+      .hero-badge-label { font-size: 10px; }
+
+      /* 文字区 */
+      .hero-label { margin-bottom: 14px; margin-top: 30px; }
+      .hero-label-text { font-size: 10px; letter-spacing: 0.2em; }
+      .hero-name { font-size: clamp(46px, 13vw, 68px); margin-bottom: 14px; }
+      .hero-tags { gap: 6px; margin-bottom: 20px; flex-wrap: wrap; }
+      .hero-tag { font-size: 11px; padding: 3px 10px; }
+      .hero-slogan {
+        font-size: 14px;
+        line-height: 1.75;
+        padding-left: 14px;
+        margin-bottom: 28px;
+        border-left-width: 2px;
+      }
+
+      /* 数据统计：2×2 网格，整齐对称 */
+      .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px 16px;
+        margin-bottom: 32px;
+      }
+      .stat-num { font-size: 30px; }
+      .stat-label { font-size: 11px; margin-top: 4px; }
+
+      /* 按钮 */
+      .hero-ctas { flex-direction: column; gap: 10px; }
+      .hero-ctas .btn { width: 100%; justify-content: center; min-height: 48px; font-size: 14px; }
+
+      /* ── 标杆案例 ── */
       .battle-card { grid-template-columns: 1fr; }
-      .battle-content { padding: 32px 24px; }
+      .battle-content { padding: 28px 20px 24px; }
+      .battle-num { font-size: 56px; top: 14px; right: 18px; }
+      .battle-title { font-size: 20px; line-height: 1.3; }
+      .battle-sub { font-size: 13px; }
+      .battle-row-text { font-size: 13px; }
       .battle-media { border-left: none; border-top: 1px solid var(--border); }
-      .battle-media-layout { min-height: 380px; }
-      .battle-media-hero img { height: 170px; }
+      .battle-media-layout { min-height: 340px; }
+      .battle-media-hero { padding: 14px; }
+      .battle-media-hero img { height: 155px; }
       .battle-media-duo { min-height: 200px; }
-      .battle-media-port { min-height: 200px; padding: 14px 10px; }
-      .battle-media-port img { max-height: 220px; }
-      .battle-media-stack { min-height: 320px; }
-      .battle-media-stack-item { padding: 12px; }
-      .battle-media-stack-item img { max-height: 150px; }
+      .battle-media-port { min-height: 200px; padding: 12px 8px; }
+      .battle-media-port img { max-height: 210px; }
+      .battle-media-stack { min-height: 280px; }
+      .battle-media-stack-item { padding: 10px; }
+      .battle-media-stack-item img { max-height: 130px; }
+      .battle-result { padding: 16px 18px; }
+      .battle-result-row { gap: 18px; flex-wrap: wrap; }
+      .result-num { font-size: 26px; }
+      .result-desc { font-size: 11px; }
 
-      /* Vault */
-      .vault-tabs { flex-wrap: wrap; gap: 4px; }
-      .v-tab { min-width: calc(50% - 6px); flex: none; font-size: 11.5px; padding: 10px 8px; }
-      .vault-grid, .vault-grid.col2 { grid-template-columns: 1fr; }
+      /* ── 作品画廊 ── */
+      .vault-tabs {
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 5px;
+        margin: 32px 0 24px;
+      }
+      .v-tab {
+        min-width: calc(50% - 8px);
+        flex: none;
+        font-size: 11.5px;
+        padding: 10px 8px;
+        line-height: 1.3;
+      }
+      .v-tab span { font-size: 9px; margin-top: 3px; }
+      .vault-grid, .vault-grid.col2 { grid-template-columns: 1fr; gap: 14px; }
+      .vault-panel-head { flex-direction: column; gap: 10px; }
+      .vault-panel-title { font-size: 18px; }
+      .v-body { padding: 14px 16px 18px; }
+      .v-title { font-size: 14px; }
+      .v-desc { font-size: 12px; }
 
-      /* Recognition */
-      .logos-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .recognition-grid { grid-template-columns: 1fr; }
+      /* ── 背书 / 客户 ── */
+      .logos-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 28px 0 44px; }
+      .logo-card { padding: 18px 12px; min-height: 80px; }
+      .logo-card-name { font-size: 12px; }
+      .recognition-section-title { font-size: 18px; }
+      .recognition-grid { grid-template-columns: 1fr; gap: 14px; }
+      .rec-card-body { padding: 16px 18px 18px; }
+      .rec-text { font-size: 13px; }
 
-      /* Methodology */
-      .method-grid { grid-template-columns: 1fr; }
-      .method-card { padding: 28px 22px; }
+      /* ── 方法论 ── */
+      .method-grid { grid-template-columns: 1fr; gap: 24px; }
+      .method-card { padding: 28px 20px; }
+      .method-title { font-size: 19px; }
+      .method-desc { font-size: 13px; }
+      .stack-layer { padding: 18px 20px; }
+      .layer-title { font-size: 14px; }
+      .layer-desc { font-size: 12px; max-width: 100%; }
+      .wf-step-title { font-size: 13px; }
+      .wf-step-desc { font-size: 12px; }
 
-      /* Vision */
-      .phases-grid { grid-template-columns: 1fr; gap: 16px; }
-      .vision-close { padding: 32px 20px; }
+      /* ── 入职规划 ── */
+      .vision-intro { font-size: 14px; line-height: 1.8; margin: 20px 0 36px; }
+      .phases-grid { grid-template-columns: 1fr; gap: 14px; margin-bottom: 36px; }
+      .phase-card { padding: 24px 20px; }
+      .phase-title { font-size: 17px; }
+      .phase-list li { font-size: 12.5px; }
+      .vision-close { padding: 28px 20px; }
+      .vision-quote { font-size: clamp(15px, 4vw, 20px); line-height: 1.7; }
 
-      /* Footer */
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      /* ── Footer ── */
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-name { font-size: 28px; }
+      .footer-tagline { font-size: 13px; }
+      .footer-bio { font-size: 12px; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
 
-      /* Lightbox */
+      /* ── Lightbox ── */
       .lb-inner { max-width: 100%; }
-      .lb-close { top: -14px; right: -10px; }
+      .lb-close { top: -14px; right: -10px; width: 32px; height: 32px; }
+      .lb-title { font-size: 15px; }
+      .lb-desc { font-size: 12px; }
     }
 
     @media (max-width: 480px) {
-      .section { padding: 50px 0; }
+      /* ── 基础 ── */
       .container { padding: 0 16px; }
-      .hero-name { font-size: clamp(42px, 12vw, 62px); }
-      .section-title { font-size: clamp(24px, 7vw, 36px); }
-      .battle-title { font-size: 20px; }
-      .hero-stats { gap: 18px; }
-      .stat-num { font-size: 30px; }
-      .battle-media-duo { grid-template-columns: 1fr 1fr; }
-      .battle-media-port { min-height: 160px; padding: 10px 8px; }
-      .battle-media-port img { max-height: 170px; }
-      .vault-grid { grid-template-columns: 1fr; }
-      .logos-grid { grid-template-columns: repeat(2, 1fr); }
-      .v-tab { font-size: 11px; padding: 9px 6px; }
-      .battle-result-row { gap: 24px; }
-      .result-num { font-size: 26px; }
+      .section { padding: 52px 0; }
+
+      /* ── Hero ── */
+      .hero-photo-wrap { width: 110px; }
+      .hero-name { font-size: clamp(40px, 12.5vw, 58px); }
+      .hero-slogan { font-size: 13.5px; }
+      .hero-stats { gap: 14px 12px; }
+      .stat-num { font-size: 26px; }
+      .stat-label { font-size: 10.5px; }
+      .hero-ctas .btn { font-size: 13px; padding: 12px 20px; }
+
+      /* ── Section 通用 ── */
+      .section-title { font-size: clamp(21px, 7vw, 30px); }
+      .section-lead { font-size: 13px; }
+
+      /* ── 标杆案例 ── */
+      .battle-title { font-size: 18px; }
+      .battle-content { padding: 22px 16px 20px; }
+      .battle-media-hero img { height: 138px; }
+      .battle-media-duo { grid-template-columns: 1fr 1fr; min-height: 170px; }
+      .battle-media-port { min-height: 170px; padding: 8px 6px; }
+      .battle-media-port img { max-height: 180px; }
+      .battle-media-stack-item img { max-height: 115px; }
+      .result-num { font-size: 22px; }
+      .result-desc { font-size: 10px; }
+
+      /* ── 作品画廊 ── */
+      .v-tab { font-size: 10.5px; padding: 9px 6px; }
+
+      /* ── 背书 ── */
+      .logos-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .logo-card { padding: 14px 10px; min-height: 72px; }
+      .logo-card-name { font-size: 11px; }
+      .logo-card-type { font-size: 9px; }
+
+      /* ── Footer ── */
+      .contact-val { font-size: 15px; }
+      .footer-copy, .footer-made { font-size: 11px; }
     }
   </style>
 </head>
