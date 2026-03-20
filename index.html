@@ -316,12 +316,13 @@
         page-break-inside: avoid;
         margin-bottom: 20px;
       }
-      .battle-media { border-left: none !important; border-top: 1px solid var(--border) !important; max-height: 260px; overflow: hidden; }
-      .battle-media-layout, .battle-media-stack { max-height: 260px; }
-      .battle-media-hero img { height: 140px !important; }
-      .battle-media-duo { min-height: 120px !important; }
-      .battle-media-port { min-height: 120px !important; }
-      .battle-media-port img, .battle-media-stack-item img { max-height: 110px !important; }
+      .battle-media { border-left: none !important; border-top: 1px solid var(--border) !important; max-height: 520px; }
+      .battle-media-layout, .battle-media-stack { max-height: 520px; }
+      .battle-media-hero img { height: 180px !important; }
+      .battle-media-duo { min-height: 300px !important; }
+      .battle-media-port { min-height: 300px !important; }
+      .battle-media-port img { max-height: 280px !important; }
+      .battle-media-stack-item img { max-height: 230px !important; }
 
       /* ── 作品画廊：显示第一个 panel ── */
       .vault-panel { display: block !important; margin-bottom: 20px; }
@@ -1369,6 +1370,9 @@
       transition: transform 0.48s var(--ease);
     }
     .rec-card-img:hover img { transform: scale(1.05); }
+    /* Carousel inside rec-card-img */
+    .rec-card-img.has-carousel::after { display: none; }
+    .rec-card-img:hover .carousel-btn { opacity: 1; }
 
     .rec-card-body { padding: 20px 22px 22px; }
     .rec-ico { display: none; }
@@ -1733,7 +1737,7 @@
         <div class="hero-photo-deco-ring"></div>
         <div class="hero-photo-deco-blob"></div>
         <div class="hero-photo-frame">
-          <img src="专业照片/Gemini_Generated_Image_ct3h64ct3h64ct3h.png" alt="陈仪平专业照片">
+          <img src="images/hero-photo.png" alt="陈仪平专业照片">
         </div>
         <div class="hero-badge">
           <div class="hero-badge-num">AI+</div>
@@ -1794,10 +1798,10 @@
         <div class="battle-media">
           <div class="battle-media-stack">
             <div class="battle-media-stack-item">
-              <img src="政企大客/截屏2026-03-19 23.19.48.png" alt="政企大客规划方案一">
+              <img src="images/Government1.png" alt="政企大客规划方案一">
             </div>
             <div class="battle-media-stack-item">
-              <img src="政企大客/截屏2026-03-19 23.20.09.png" alt="政企大客规划方案二">
+              <img src="images/Government2.png" alt="政企大客规划方案二">
             </div>
           </div>
         </div>
@@ -1836,14 +1840,14 @@
         <div class="battle-media">
           <div class="battle-media-layout">
             <div class="battle-media-hero">
-              <img src="c端种草/截屏2026-03-20 09.12.03.png" alt="C端种草爆款内容数据">
+              <img src="images/C-terminal1.png" alt="C端种草爆款内容数据">
             </div>
             <div class="battle-media-duo">
               <div class="battle-media-port">
-                <img src="c端种草/微信图片_20260320092127_14_51.png" alt="C端种草内容一">
+                <img src="images/C-terminal2.png" alt="C端种草内容一">
               </div>
               <div class="battle-media-port">
-                <img src="c端种草/微信图片_20260320092131_15_51.png" alt="C端种草内容二">
+                <img src="images/C-terminal3.png" alt="C端种草内容二">
               </div>
             </div>
           </div>
@@ -1883,14 +1887,14 @@
         <div class="battle-media">
           <div class="battle-media-layout">
             <div class="battle-media-hero">
-              <img src="产品化落地/截屏2026-03-09 09.59.56.png" alt="产品化落地整体截图">
+              <img src="images/Product 1.png" alt="产品化落地整体截图">
             </div>
             <div class="battle-media-duo">
               <div class="battle-media-port">
-                <img src="产品化落地/WechatIMG4362的副本.png" alt="产品化落地界面一">
+                <img src="images/Product 2.png" alt="产品化落地界面一">
               </div>
               <div class="battle-media-port">
-                <img src="产品化落地/WechatIMG4363的副本.png" alt="产品化落地界面二">
+                <img src="images/Product 3.png" alt="产品化落地界面二">
               </div>
             </div>
           </div>
@@ -1945,8 +1949,8 @@
           <div class="v-thumb">
             <div class="carousel-wrapper" data-autoplay>
               <div class="carousel-track">
-                <img src="政府体育局/截屏2026-03-20 09.14.48.png" alt="体育数字化转型规划一">
-                <img src="政府体育局/截屏2026-03-20 09.31.33.png" alt="体育数字化转型规划二">
+                <img src="images/physical1.png" alt="体育数字化转型规划一">
+                <img src="images/physical2.png" alt="体育数字化转型规划二">
               </div>
               <div class="carousel-dots">
                 <button class="dot active"></button>
@@ -1968,9 +1972,9 @@
           <div class="v-thumb">
             <div class="carousel-wrapper" data-autoplay>
               <div class="carousel-track">
-                <img src="政府体育场馆/截屏2026-03-19 23.21.40.png" alt="体育场馆智慧化一">
-                <img src="政府体育场馆/截屏2026-03-19 23.24.06.png" alt="体育场馆智慧化二">
-                <img src="政府体育场馆/截屏2026-03-20 09.27.22.png" alt="体育场馆智慧化三">
+                <img src="images/Venue1.png" alt="体育场馆智慧化一">
+                <img src="images/Venue2.png" alt="体育场馆智慧化二">
+                <img src="images/Venue3.png" alt="体育场馆智慧化三">
               </div>
               <div class="carousel-dots">
                 <button class="dot active"></button>
@@ -1993,9 +1997,9 @@
           <div class="v-thumb">
             <div class="carousel-wrapper" data-autoplay>
               <div class="carousel-track">
-                <img src="创新业务设计/截屏2026-03-19 23.20.25.png" alt="创新业务设计一">
-                <img src="创新业务设计/截屏2026-03-19 23.21.24.png" alt="创新业务设计二">
-                <img src="创新业务设计/截屏2026-03-19 23.24.36.png" alt="创新业务设计三">
+                <img src="images/Innovation1.png" alt="创新业务设计一">
+                <img src="images/Innovation2.png" alt="创新业务设计二">
+                <img src="images/Innovation3.png" alt="创新业务设计三">
               </div>
               <div class="carousel-dots">
                 <button class="dot active"></button>
@@ -2032,9 +2036,9 @@
           <div class="v-thumb">
             <div class="carousel-wrapper" data-autoplay>
               <div class="carousel-track">
-                <img src="红白黑小程序/微信图片_20260320093537_118_96.png" alt="红白黑小程序一">
-                <img src="红白黑小程序/微信图片_20260320093538_119_96.jpg" alt="红白黑小程序二">
-                <img src="红白黑小程序/微信图片_20260320093539_120_96.png" alt="红白黑小程序三">
+                <img src="images/Mini program1.png" alt="红白黑小程序一">
+                <img src="images/Mini program2.jpg" alt="红白黑小程序二">
+                <img src="images/Mini program3.png" alt="红白黑小程序三">
               </div>
               <div class="carousel-dots">
                 <button class="dot active"></button>
@@ -2057,9 +2061,9 @@
           <div class="v-thumb">
             <div class="carousel-wrapper" data-autoplay>
               <div class="carousel-track">
-                <img src="销售线索分发分与追踪/截屏2026-03-20 09.16.14.png" alt="销售线索追踪一">
-                <img src="销售线索分发分与追踪/截屏2026-03-20 09.41.06.png" alt="销售线索追踪二">
-                <img src="销售线索分发分与追踪/截屏2026-03-20 09.41.18.png" alt="销售线索追踪三">
+                <img src="images/clue1.png" alt="销售线索追踪一">
+                <img src="images/clue2.png" alt="销售线索追踪二">
+                <img src="images/clue3.png" alt="销售线索追踪三">
               </div>
               <div class="carousel-dots">
                 <button class="dot active"></button>
@@ -2080,7 +2084,7 @@
 
         <div class="v-item" onclick="openVaultItem(this,'AI 生产力工具矩阵全栈应用','将 Cursor、Trae、Claude、Figma 等前沿 AI 工具无缝融入日常工作流，实现跨职能业务的高效敏捷交付。')">
           <div class="v-thumb">
-            <img src="AI生产力工具/截屏2026-03-20 09.44.21.png" alt="AI生产力工具">
+            <img src="images/tool.png" alt="AI生产力工具">
             <div class="v-zoom-hint">点击预览</div>
           </div>
           <div class="v-body">
@@ -2106,7 +2110,7 @@
 
         <div class="v-item" onclick="openVaultItem(this,'《布鲁伊》爆款内容底层逻辑拆解','深度拆解《布鲁伊》在中国家庭消费者中引发高度共鸣的内容机制，提炼可复用的选题公式并落地验证，单条内容获得 40 万+ 播放。')">
           <div class="v-thumb">
-            <img src="爆款分析短视频/截屏2026-03-20 09.47.58.png" alt="爆款内容底层逻辑">
+            <img src="images/short video.png" alt="爆款内容底层逻辑">
             <div class="v-zoom-hint">点击预览</div>
           </div>
           <div class="v-body">
@@ -2118,7 +2122,7 @@
 
         <div class="v-item" onclick="openVaultItem(this,'「金馆长学院」公众号运营体系','为体育/教育机构搭建的微信公众号内容体系，涵盖定位策略、排版规范、选题框架与阅读量增长路径，形成可复用的机构品牌内容矩阵。')">
           <div class="v-thumb">
-            <img src="公众号内容运营/截屏2026-03-20 09.50.48.png" alt="公众号运营体系">
+            <img src="images/Official account.png" alt="公众号运营体系">
             <div class="v-zoom-hint">点击预览</div>
           </div>
           <div class="v-body">
@@ -2130,7 +2134,7 @@
 
         <div class="v-item" onclick="openVaultItem(this,'新媒体营销活动 H5 策划','为大型赛事及营销节点策划的 H5 交互页面，融合互动机制与裂变设计，兼顾传播广度与品牌调性。')">
           <div class="v-thumb">
-            <img src="H5活动策划/截屏2026-03-19 23.24.16.png" alt="H5活动策划">
+            <img src="images/plan.png" alt="H5活动策划">
             <div class="v-zoom-hint">点击预览</div>
           </div>
           <div class="v-body">
@@ -2156,7 +2160,7 @@
 
         <div class="v-item" onclick="openVaultItem(this,'团队羽雀知识库体系','在羽雀搭建的结构化知识管理平台，涵盖内容策划、客户管理、产品设计等核心业务模块，新人 3 天可独立上岗。')">
           <div class="v-thumb">
-            <img src="知识管理/截屏2026-03-20 10.03.03.png" alt="团队知识库体系">
+            <img src="images/Knowledge.png" alt="团队知识库体系">
             <div class="v-zoom-hint">点击预览</div>
           </div>
           <div class="v-body">
@@ -2168,7 +2172,7 @@
 
         <div class="v-item" onclick="openVaultItem(this,'新媒体运营 & 售前标准 SOP','将新媒体运营和售前沟通流程标准化，涵盖选题、发布、客户跟进全流程，有效降低沟通成本，提升团队整体作战效率。')">
           <div class="v-thumb">
-            <img src="流程标准化/截屏2026-03-20 10.04.20.png" alt="新媒体运营SOP">
+            <img src="images/process.png" alt="新媒体运营SOP">
             <div class="v-zoom-hint">点击预览</div>
           </div>
           <div class="v-body">
@@ -2314,8 +2318,8 @@
     <div class="recognition-grid">
 
       <div class="rec-card reveal" style="transition-delay:.1s">
-        <div class="rec-card-img" onclick="openLightbox('省级媒体 · 署名报道','策划内容及行业前瞻观点，多次获省级官方媒体转载与署名报道。','署名报道/截屏2026-03-20 10.11.16.png')">
-          <img src="署名报道/截屏2026-03-20 10.11.16.png" alt="省级媒体署名报道">
+        <div class="rec-card-img" onclick="openLightbox('省级媒体 · 署名报道','策划内容及行业前瞻观点，多次获省级官方媒体转载与署名报道。','images/report.png')">
+          <img src="images/report.png" alt="省级媒体署名报道">
         </div>
         <div class="rec-card-body">
           <div class="rec-text">策划内容及行业前瞻观点，多次获省级官方媒体转载与署名报道。</div>
@@ -2324,8 +2328,19 @@
       </div>
 
       <div class="rec-card reveal" style="transition-delay:.2s">
-        <div class="rec-card-img" onclick="openLightbox('政企提案 · 现场控盘','主导大型政府项目现场沙盘汇报，多次作为核心主讲人出席决策会议。','现场汇报/微信图片_20260320095117_123_96.jpg')">
-          <img src="现场汇报/微信图片_20260320095117_123_96.jpg" alt="政企提案现场汇报">
+        <div class="rec-card-img has-carousel" onclick="openRecCarousel(this,'政企提案 · 现场控盘','主导大型政府项目现场沙盘汇报，多次作为核心主讲人出席决策会议。')">
+          <div class="carousel-wrapper" data-autoplay>
+            <div class="carousel-track">
+              <img src="images/on site1.jpg" alt="政企提案现场汇报一">
+              <img src="images/on site2.jpg" alt="政企提案现场汇报二">
+            </div>
+            <div class="carousel-dots">
+              <button class="dot active"></button>
+              <button class="dot"></button>
+            </div>
+            <button class="carousel-btn prev" onclick="carouselNav(event,this,-1)">&#8249;</button>
+            <button class="carousel-btn next" onclick="carouselNav(event,this,1)">&#8250;</button>
+          </div>
         </div>
         <div class="rec-card-body">
           <div class="rec-text">主导大型政府项目现场沙盘汇报，多次作为核心主讲人出席决策会议。</div>
@@ -2334,8 +2349,8 @@
       </div>
 
       <div class="rec-card reveal" style="transition-delay:.3s">
-        <div class="rec-card-img" onclick="openLightbox('自然流量 · 数据验证','突破常规买量模式，依靠优质内容与情绪价值在多平台实现可观的自然流量增长。','自然流量/截屏2026-03-20 10.12.22.png')">
-          <img src="自然流量/截屏2026-03-20 10.12.22.png" alt="自然流量数据验证">
+        <div class="rec-card-img" onclick="openLightbox('自然流量 · 数据验证','突破常规买量模式，依靠优质内容与情绪价值在多平台实现可观的自然流量增长。','images/data.png')">
+          <img src="images/data.png" alt="自然流量数据验证">
         </div>
         <div class="rec-card-body">
           <div class="rec-text">突破常规买量模式，依靠优质内容与情绪价值在多平台实现可观的自然流量增长。</div>
@@ -2422,8 +2437,8 @@
             <div>
               <div class="contact-label">微信 / Wechat</div>
               <div class="contact-val">
-                <img src="微信二维码/微信图片_20260320102525_124_96.jpg" alt="微信二维码"
-                  onclick="openLightbox('微信二维码','扫码添加微信，期待深聊。','微信二维码/微信图片_20260320102525_124_96.jpg')"
+                <img src="images/qr-code.jpg" alt="微信二维码"
+                  onclick="openLightbox('微信二维码','扫码添加微信，期待深聊。','images/qr-code.jpg')"
                   style="width:100px;height:100px;border-radius:6px;margin-top:8px;border:1px solid var(--border-light);background:#fff;padding:4px;cursor:zoom-in;transition:transform 0.25s,box-shadow 0.25s;"
                   onmouseover="this.style.transform='scale(1.06)';this.style.boxShadow='0 8px 24px rgba(201,169,110,0.28)'"
                   onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'">
@@ -2577,6 +2592,15 @@
   }
 
   document.querySelectorAll('.carousel-wrapper[data-autoplay]').forEach(initCarousel);
+
+  /* ---------- Rec-card carousel lightbox ---------- */
+  function openRecCarousel(el, title, desc) {
+    const wrapper = el.querySelector('.carousel-wrapper');
+    if (!wrapper) return;
+    const imgs = wrapper.querySelectorAll('.carousel-track img');
+    const idx = wrapper._currentIdx || 0;
+    openLightbox(title, desc, imgs[idx] ? imgs[idx].src : null);
+  }
 
   /* ---------- Lightbox ---------- */
   function openLightbox(title, desc, imgSrc) {
