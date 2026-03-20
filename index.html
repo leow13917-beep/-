@@ -1576,84 +1576,107 @@
       /* ══════════════════════════════════════
          基础
       ══════════════════════════════════════ */
-      .container { padding: 0 18px; }
-      .section { padding: 56px 0; }
-      #nav { padding: 0 18px; }
+      .container { padding: 0 22px; }
+      .section { padding: 60px 0; }
+      #nav { padding: 0 20px; }
       .nav-links, .nav-cta { display: none; }
       .nav-hamburger { display: flex; }
-      .section-eyebrow { font-size: 10px; letter-spacing: 0.14em; margin-bottom: 12px; }
-      .section-title { font-size: clamp(22px, 6vw, 34px); margin-bottom: 12px; }
-      .section-lead { font-size: 13.5px; line-height: 1.75; }
+      .section-eyebrow { font-size: 10px; letter-spacing: 0.16em; margin-bottom: 14px; }
+      .section-title { font-size: clamp(22px, 6vw, 32px); margin-bottom: 12px; line-height: 1.25; }
+      .section-lead { font-size: 13px; line-height: 1.8; color: var(--text-2); }
 
       /* ══════════════════════════════════════
-         HERO — 全面重设计
+         HERO — 居中高级感设计
       ══════════════════════════════════════ */
       #hero { min-height: 100svh; padding-top: 64px; }
       .hero-inner { grid-template-columns: 1fr; gap: 0; }
 
-      /* 照片区：圆形头像 + badge 竖向排列 */
+      /* 文字区居中对齐 */
+      .hero-inner > div:first-child { text-align: center; }
+
+      /* 照片区：居中圆形，金边光晕 */
       .hero-photo-wrap {
         order: -1;
-        width: 128px;
-        margin: 24px auto 28px;
+        width: 120px;
+        margin: 36px auto 16px;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
       .hero-photo-frame {
-        width: 128px;
+        width: 120px;
         aspect-ratio: 1 / 1;
         border-radius: 50%;
-        border: 2px solid rgba(201,169,110,0.5);
-        box-shadow: 0 0 0 6px rgba(201,169,110,0.07),
-                    0 16px 48px rgba(0,0,0,0.55);
+        border: 2px solid rgba(201,169,110,0.6);
+        box-shadow: 0 0 0 8px rgba(201,169,110,0.07),
+                    0 0 0 16px rgba(201,169,110,0.03),
+                    0 20px 56px rgba(0,0,0,0.6);
+        background: radial-gradient(circle at 35% 25%,
+          rgba(201,169,110,0.12) 0%, rgba(13,13,26,0.95) 65%);
       }
       .hero-photo-frame::after { display: none; }
       .hero-photo-deco-ring { display: none; }
       .hero-photo-deco-blob { display: none; }
 
-      /* badge 静态排列在照片下方 */
+      /* badge：照片正下方，居中 pill */
       .hero-badge {
         position: static;
-        margin-top: 10px;
-        padding: 5px 14px 5px 10px;
-        border-radius: 20px;
+        margin-top: 14px;
+        padding: 6px 16px;
+        border-radius: 24px;
         display: inline-flex;
         align-items: center;
         gap: 6px;
         white-space: nowrap;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+        background: var(--bg-2);
+        border: 1px solid rgba(201,169,110,0.28);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.4);
       }
-      .hero-badge-num { font-size: 14px; line-height: 1; }
-      .hero-badge-label { font-size: 10px; margin-top: 0; }
+      .hero-badge-num { font-size: 13px; line-height: 1; }
+      .hero-badge-label { font-size: 10px; margin-top: 0; color: var(--text-2); }
 
-      /* 标签行 */
-      .hero-label { margin-bottom: 10px; }
-      .hero-label-text { font-size: 10px; letter-spacing: 0.18em; }
+      /* 小标签行：居中，去掉装饰线 */
+      .hero-label {
+        justify-content: center;
+        margin-top: 32px;
+        margin-bottom: 8px;
+      }
+      .hero-label-line { display: none; }
+      .hero-label-text { font-size: 10px; letter-spacing: 0.22em; }
 
-      /* 姓名 */
-      .hero-name { font-size: clamp(48px, 14vw, 72px); margin-bottom: 12px; line-height: 1; }
+      /* 姓名：大号居中 */
+      .hero-name {
+        font-size: clamp(52px, 16vw, 80px);
+        margin-bottom: 16px;
+        line-height: 1;
+        letter-spacing: -0.01em;
+      }
 
-      /* 身份标签 pills */
-      .hero-tags { gap: 6px; margin-bottom: 22px; flex-wrap: wrap; }
-      .hero-tag { font-size: 11px; padding: 4px 11px; border-radius: 20px; }
+      /* 身份标签：居中排列 */
+      .hero-tags {
+        justify-content: center;
+        gap: 7px;
+        margin-bottom: 28px;
+        flex-wrap: wrap;
+      }
+      .hero-tag { font-size: 11px; padding: 5px 12px; border-radius: 20px; }
 
-      /* 口号：移动端隐藏，释放空间 */
+      /* 口号：移动端隐藏 */
       .hero-slogan { display: none; }
 
-      /* 数据统计：卡片容器 + 2×2 内部网格 */
+      /* 数据统计：深色卡片 + 2×2 格子，带内分隔线 */
       .hero-stats {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0;
-        margin-bottom: 24px;
+        margin-bottom: 28px;
         background: var(--bg-2);
         border: 1px solid var(--border-light);
-        border-radius: 16px;
+        border-radius: 18px;
         overflow: hidden;
       }
       .hero-stats > div {
-        padding: 18px 12px;
+        padding: 22px 16px 18px;
         text-align: center;
       }
       .hero-stats > div:nth-child(1) {
@@ -1666,50 +1689,50 @@
       .hero-stats > div:nth-child(3) {
         border-right: 1px solid var(--border);
       }
-      .stat-num { font-size: 28px; }
-      .stat-label { font-size: 10.5px; margin-top: 5px; color: var(--text-2); }
+      .stat-num { font-size: 30px; }
+      .stat-label { font-size: 10px; margin-top: 6px; letter-spacing: 0.04em; }
 
-      /* CTA 按钮 */
+      /* CTA 按钮：主按钮 + Ghost 按钮，隐藏 PDF */
       .hero-ctas { flex-direction: column; gap: 10px; }
       .hero-ctas .btn {
         width: 100%;
         justify-content: center;
-        min-height: 50px;
+        min-height: 52px;
         font-size: 14px;
-        border-radius: 12px;
+        border-radius: 14px;
+        letter-spacing: 0.04em;
       }
+      .hero-ctas .btn-pdf { display: none; }
 
       /* ══════════════════════════════════════
          标杆案例
       ══════════════════════════════════════ */
-      .battle-card { grid-template-columns: 1fr; }
-      .battle-content { padding: 24px 18px 20px; }
-      .battle-num { font-size: 52px; top: 14px; right: 16px; }
-      .battle-badge { font-size: 10px; margin-bottom: 14px; }
-      .battle-title { font-size: 19px; line-height: 1.35; margin-bottom: 8px; }
-      .battle-sub { font-size: 12.5px; margin-bottom: 22px; }
-      .battle-row-label { font-size: 10px; }
-      .battle-row-text { font-size: 12.5px; line-height: 1.7; }
+      .battles-grid { gap: 20px; margin-top: 36px; }
+      .battle-card { grid-template-columns: 1fr; border-radius: 16px; }
+      .battle-content { padding: 28px 20px 24px; }
+      .battle-num { font-size: 48px; top: 16px; right: 18px; }
+      .battle-badge { font-size: 10px; padding: 4px 10px; margin-bottom: 12px; }
+      .battle-title { font-size: 18px; line-height: 1.35; margin-bottom: 6px; }
+      .battle-sub { font-size: 12px; margin-bottom: 20px; }
+      .battle-rule { margin-bottom: 18px; }
+      .battle-row { margin-bottom: 16px; }
+      .battle-row-label { font-size: 9.5px; letter-spacing: 0.12em; margin-bottom: 5px; }
+      .battle-row-text { font-size: 12.5px; line-height: 1.72; }
       .battle-media { border-left: none; border-top: 1px solid var(--border); }
-      .battle-media-layout { min-height: 320px; }
+      .battle-media-layout { min-height: 300px; }
       .battle-media-hero { padding: 12px; }
-      .battle-media-hero img { height: 150px; }
-      .battle-media-duo { min-height: 200px; }
-      .battle-media-port { min-height: 200px; padding: 10px 8px; }
-      .battle-media-port img { max-height: 200px; }
-      .battle-media-stack { min-height: 260px; }
+      .battle-media-hero img { height: 145px; }
+      .battle-media-duo { min-height: 195px; }
+      .battle-media-port { min-height: 195px; padding: 10px 8px; }
+      .battle-media-port img { max-height: 195px; }
+      .battle-media-stack { min-height: 250px; }
       .battle-media-stack-item { padding: 10px; }
-      .battle-media-stack-item img { max-height: 120px; }
-      /* 核心成效：加背景卡片 */
-      .battle-result {
-        margin-top: 20px;
-        padding: 14px 16px;
-        border-radius: 10px;
-      }
-      .battle-result-label { font-size: 10px; margin-bottom: 10px; }
-      .battle-result-row { gap: 16px; flex-wrap: wrap; }
+      .battle-media-stack-item img { max-height: 115px; }
+      .battle-result { margin-top: 18px; padding: 14px 16px; border-radius: 10px; }
+      .battle-result-label { font-size: 9.5px; margin-bottom: 10px; }
+      .battle-result-row { gap: 14px; flex-wrap: wrap; }
       .result-num { font-size: 24px; }
-      .result-desc { font-size: 11px; margin-top: 3px; }
+      .result-desc { font-size: 10.5px; margin-top: 3px; }
 
       /* ══════════════════════════════════════
          作品画廊
@@ -1718,7 +1741,8 @@
         flex-wrap: wrap;
         gap: 5px;
         padding: 5px;
-        margin: 28px 0 20px;
+        margin: 28px 0 22px;
+        border-radius: 12px;
       }
       .v-tab {
         min-width: calc(50% - 7px);
@@ -1730,13 +1754,14 @@
       }
       .v-tab span { font-size: 9px; margin-top: 2px; }
       .vault-grid, .vault-grid.col2 { grid-template-columns: 1fr; gap: 12px; }
-      .vault-panel-head { flex-direction: column; gap: 10px; margin-bottom: 20px; }
+      .vault-panel-head { flex-direction: column; gap: 8px; margin-bottom: 18px; }
       .vault-panel-title { font-size: 17px; }
-      .vault-panel-desc { font-size: 12px; }
+      .vault-panel-desc { font-size: 12px; margin-top: 3px; }
+      .v-item { border-radius: 10px; }
       .v-body { padding: 14px 16px 18px; }
-      .v-tag { font-size: 9.5px; }
-      .v-title { font-size: 14px; }
-      .v-desc { font-size: 12px; line-height: 1.6; }
+      .v-tag { font-size: 9.5px; margin-bottom: 5px; }
+      .v-title { font-size: 14px; margin-bottom: 5px; }
+      .v-desc { font-size: 12px; line-height: 1.62; }
 
       /* ══════════════════════════════════════
          背书 & 高光节点
@@ -1744,64 +1769,64 @@
       .logos-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 8px;
-        margin: 24px 0 36px;
+        margin: 22px 0 40px;
       }
-      .logo-card {
-        padding: 16px 10px;
-        min-height: 76px;
-        border-radius: 10px;
-        gap: 5px;
-      }
+      .logo-card { padding: 16px 10px; min-height: 72px; border-radius: 10px; gap: 4px; }
       .logo-card-name { font-size: 12px; }
-      .logo-card-type { font-size: 9.5px; }
-      .recognition-section-title { font-size: 18px; margin-bottom: 18px; }
+      .logo-card-type { font-size: 9px; letter-spacing: 0.05em; }
+      .recognition-section-title { font-size: 18px; margin-bottom: 16px; }
       .recognition-grid { grid-template-columns: 1fr; gap: 12px; }
-      .rec-card-body { padding: 14px 16px 18px; }
-      .rec-text { font-size: 12.5px; line-height: 1.65; }
-      .rec-source { font-size: 11px; margin-top: 8px; }
+      .rec-card { border-radius: 12px; }
+      .rec-card-body { padding: 16px 18px 20px; }
+      .rec-text { font-size: 12.5px; line-height: 1.68; }
+      .rec-source { font-size: 11px; margin-top: 10px; }
 
       /* ══════════════════════════════════════
          方法论
       ══════════════════════════════════════ */
-      .method-grid { grid-template-columns: 1fr; gap: 20px; margin-top: 36px; }
-      .method-card { padding: 24px 18px; border-radius: 16px; }
-      .method-badge { font-size: 11px; padding: 5px 12px; }
+      .method-grid { grid-template-columns: 1fr; gap: 18px; margin-top: 32px; }
+      .method-card { padding: 26px 20px; border-radius: 16px; }
+      .method-badge { font-size: 11px; padding: 5px 12px; margin-bottom: 16px; }
       .method-title { font-size: 18px; margin-bottom: 10px; }
-      .method-desc { font-size: 12.5px; line-height: 1.7; margin-bottom: 18px; }
+      .method-desc { font-size: 12.5px; line-height: 1.72; margin-bottom: 18px; }
+      .stack-wrap { gap: 14px; }
       .stack-layer { padding: 16px 18px; border-radius: 10px; }
-      .layer-title { font-size: 13.5px; margin-bottom: 6px; }
+      .layer-title { font-size: 13px; margin-bottom: 5px; }
       .layer-desc { font-size: 12px; max-width: 100%; line-height: 1.65; }
-      .wf-step { padding: 12px 0; gap: 14px; }
-      .wf-dot { width: 36px; height: 36px; font-size: 11px; }
-      .wf-step-title { font-size: 13px; }
-      .wf-step-desc { font-size: 11.5px; }
-      .wf-chip { font-size: 9.5px; }
+      .wf-step { padding: 10px 0; gap: 14px; }
+      .wf-dot { width: 34px; height: 34px; font-size: 11px; flex-shrink: 0; }
+      .wf-step-title { font-size: 13px; margin-bottom: 3px; }
+      .wf-step-desc { font-size: 11.5px; line-height: 1.6; }
+      .wf-chips { margin-top: 6px; }
+      .wf-chip { font-size: 9.5px; padding: 2px 7px; }
 
       /* ══════════════════════════════════════
          入职规划
       ══════════════════════════════════════ */
-      .vision-intro { font-size: 13.5px; line-height: 1.8; margin: 18px 0 32px; }
-      .phases-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 28px; }
-      .phase-card { padding: 22px 18px; border-radius: 14px; }
-      .phase-period { font-size: 9.5px; }
+      .vision-intro { font-size: 13px; line-height: 1.82; margin: 16px 0 28px; }
+      .phases-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; }
+      .phase-card { padding: 24px 20px; border-radius: 14px; }
+      .phase-period { font-size: 9px; letter-spacing: 0.18em; margin-bottom: 10px; }
       .phase-title { font-size: 17px; margin-bottom: 14px; }
-      .phase-list li { font-size: 12.5px; margin-bottom: 10px; line-height: 1.65; }
-      .vision-close { padding: 28px 20px; border-radius: 16px; }
-      .vision-quote { font-size: clamp(14px, 4vw, 18px); line-height: 1.75; }
-      .vision-sig { font-size: 12.5px; }
+      .phase-list li { font-size: 12.5px; margin-bottom: 10px; line-height: 1.68; padding-left: 18px; }
+      .vision-close { padding: 32px 22px; border-radius: 18px; }
+      .vision-quote { font-size: clamp(14px, 4vw, 18px); line-height: 1.8; margin-bottom: 16px; }
+      .vision-sig { font-size: 12px; }
 
       /* ══════════════════════════════════════
          Footer
       ══════════════════════════════════════ */
-      .footer-grid { grid-template-columns: 1fr; gap: 24px; margin-bottom: 28px; }
-      .footer-name { font-size: 26px; }
-      .footer-tagline { font-size: 12.5px; }
-      .footer-bio { font-size: 12px; max-width: 100%; }
-      .contact-list { gap: 14px; }
-      .contact-ico { width: 40px; height: 40px; font-size: 12px; border-radius: 8px; }
-      .contact-label { font-size: 9px; }
+      footer { padding: 44px 0 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; margin-bottom: 24px; }
+      .footer-name { font-size: 28px; margin-bottom: 5px; }
+      .footer-tagline { font-size: 12px; margin-bottom: 14px; }
+      .footer-bio { font-size: 12px; max-width: 100%; line-height: 1.72; }
+      .contact-list { gap: 16px; }
+      .contact-row { gap: 14px; }
+      .contact-ico { width: 42px; height: 42px; font-size: 12px; border-radius: 8px; flex-shrink: 0; }
+      .contact-label { font-size: 9px; margin-bottom: 2px; }
       .contact-val { font-size: 15px; }
-      .footer-bottom { flex-direction: column; gap: 6px; text-align: center; padding-top: 18px; }
+      .footer-bottom { flex-direction: column; gap: 5px; text-align: center; padding-top: 18px; }
       .footer-copy, .footer-made { font-size: 11px; }
 
       /* ══════════════════════════════════════
@@ -1815,44 +1840,47 @@
 
     @media (max-width: 480px) {
       /* ── 基础 ── */
-      .container { padding: 0 14px; }
-      .section { padding: 48px 0; }
-      .section-title { font-size: clamp(20px, 6.5vw, 28px); }
-      .section-lead { font-size: 13px; }
+      .container { padding: 0 16px; }
+      .section { padding: 50px 0; }
+      .section-title { font-size: clamp(19px, 6vw, 27px); }
+      .section-lead { font-size: 12.5px; }
 
       /* ── Hero ── */
-      .hero-photo-wrap { width: 110px; margin: 18px auto 22px; }
-      .hero-photo-frame { width: 110px; }
-      .hero-name { font-size: clamp(42px, 13vw, 62px); }
-      .hero-slogan { font-size: 13px; }
-      .stat-num { font-size: 25px; }
-      .hero-ctas .btn { font-size: 13px; min-height: 46px; }
+      .hero-photo-wrap { width: 106px; margin: 28px auto 14px; }
+      .hero-photo-frame { width: 106px; }
+      .hero-name { font-size: clamp(46px, 14vw, 68px); }
+      .hero-tags { gap: 6px; }
+      .hero-tag { font-size: 10.5px; padding: 4px 10px; }
+      .hero-stats > div { padding: 18px 10px 16px; }
+      .stat-num { font-size: 26px; }
+      .stat-label { font-size: 9.5px; }
+      .hero-ctas .btn { min-height: 48px; font-size: 13px; }
 
       /* ── 标杆案例 ── */
       .battle-title { font-size: 17px; }
-      .battle-content { padding: 20px 14px 18px; }
-      .battle-media-hero img { height: 135px; }
+      .battle-content { padding: 22px 16px 20px; }
+      .battle-media-hero img { height: 130px; }
       .battle-media-duo { min-height: 165px; }
       .battle-media-port { min-height: 165px; padding: 8px 6px; }
-      .battle-media-port img { max-height: 175px; }
+      .battle-media-port img { max-height: 170px; }
       .battle-media-stack-item img { max-height: 108px; }
       .result-num { font-size: 21px; }
 
-      /* ── 作品画廊 ── */
+      /* ── 작품화랑 ── */
       .v-tab { font-size: 10px; padding: 9px 5px; }
+      .v-title { font-size: 13px; }
 
-      /* ── 背书 ── */
+      /* ── 배서 ── */
       .logos-grid { gap: 7px; }
-      .logo-card { padding: 12px 8px; min-height: 68px; }
-      .logo-card-name { font-size: 11px; }
+      .logo-card { padding: 13px 8px; min-height: 66px; }
 
       /* ── 方法论 ── */
-      .method-card { padding: 20px 14px; }
-      .stack-layer { padding: 14px 14px; }
+      .method-card { padding: 20px 16px; }
+      .stack-layer { padding: 13px 14px; }
 
       /* ── 入职规划 ── */
-      .phase-card { padding: 18px 14px; }
-      .vision-close { padding: 22px 16px; }
+      .phase-card { padding: 20px 16px; }
+      .vision-close { padding: 24px 18px; }
     }
   </style>
 </head>
@@ -1971,7 +1999,7 @@
       独立负责的<span class="hl">标杆案例解析</span>
     </h2>
     <p class="section-lead reveal" style="transition-delay:.14s">
-      摒弃常规履历陈述。通过政企服务、家庭消费与数字化基建三大案例，深度展现从业务痛点洞察到产品落地的全链路破局能力。
+      通过政企服务、家庭消费与数字化基建三大案例，深度展现从业务痛点洞察到产品落地的全链路破局能力。
     </p>
 
     <div class="battles-grid">
@@ -1981,8 +2009,8 @@
         <div class="battle-content">
           <div class="battle-num">01</div>
           <div class="battle-badge">政企大客 · 数字化顶层规划</div>
-          <h3 class="battle-title">全城体育数字化重构方案</h3>
-          <p class="battle-sub">重庆"三张清单"省市级政务服务架构设计</p>
+          <h3 class="battle-title">重庆市体育数字化转型规划</h3>
+          <p class="battle-sub">为重庆市体育局设计数字体育架构和申报方案</p>
           <div class="battle-rule"></div>
           <div class="battle-row">
             <div class="battle-row-label">核心痛点</div>
@@ -2554,7 +2582,7 @@
           </div>
         </div>
         <div class="rec-card-body">
-          <div class="rec-text">主导大型政府项目现场沙盘汇报，多次作为核心主讲人出席决策会议。</div>
+          <div class="rec-text">同省局、市局领导沟通汇报数字体育建设方案，多次作为核心主讲人进行沟通交流。</div>
           <div class="rec-source">政企提案 · 现场控盘</div>
         </div>
       </div>
