@@ -1557,6 +1557,111 @@
     .footer-made .g { color: var(--gold); }
 
     /* ==========================================
+       EXPERIENCE (公司履历)
+    ========================================== */
+    #experience {
+      background: linear-gradient(180deg, var(--bg-0) 0%, rgba(13,13,26,0.5) 100%);
+    }
+
+    .exp-timeline {
+      margin-top: 52px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .exp-timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      bottom: 40px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), rgba(201,169,110,0.1));
+    }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 0 28px;
+      padding-bottom: 32px;
+      position: relative;
+    }
+    .exp-item:last-child { padding-bottom: 0; }
+    .exp-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--bg-0);
+      box-shadow: 0 0 0 4px rgba(201,169,110,0.2);
+      margin-top: 8px;
+      justify-self: center;
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+    .exp-content {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 32px 36px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.28s, transform 0.28s, box-shadow 0.28s;
+    }
+    .exp-content::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold) 0%, transparent 70%);
+    }
+    .exp-content:hover {
+      border-color: rgba(201,169,110,0.28);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+    .exp-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .exp-company {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-0);
+      margin-bottom: 6px;
+    }
+    .exp-role {
+      font-size: 13.5px;
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .exp-period {
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,169,110,0.2);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+    .exp-desc {
+      font-size: 14px;
+      color: var(--text-1);
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    /* ==========================================
        RESPONSIVE
     ========================================== */
     @media (max-width: 1024px) {
@@ -1782,6 +1887,20 @@
       .rec-source { font-size: 11px; margin-top: 10px; }
 
       /* ══════════════════════════════════════
+         公司履历
+      ══════════════════════════════════════ */
+      .exp-timeline { margin-top: 32px; }
+      .exp-timeline::before { left: 14px; bottom: 28px; }
+      .exp-item { grid-template-columns: 32px 1fr; gap: 0 16px; padding-bottom: 20px; }
+      .exp-dot { width: 10px; height: 10px; margin-top: 7px; }
+      .exp-content { padding: 20px 18px 22px; border-radius: 14px; }
+      .exp-header { flex-direction: column; gap: 8px; margin-bottom: 12px; }
+      .exp-company { font-size: 16px; margin-bottom: 4px; }
+      .exp-role { font-size: 12px; }
+      .exp-period { font-size: 10px; padding: 4px 11px; }
+      .exp-desc { font-size: 12.5px; line-height: 1.75; }
+
+      /* ══════════════════════════════════════
          方法论
       ══════════════════════════════════════ */
       .method-grid { grid-template-columns: 1fr; gap: 18px; margin-top: 32px; }
@@ -1892,6 +2011,7 @@
   <div class="nav-logo">陈仪<em>平</em></div>
   <ul class="nav-links">
     <li><a href="#hero">首页</a></li>
+    <li><a href="#experience">职业履历</a></li>
     <li><a href="#battles">标杆案例</a></li>
     <li><a href="#vault">作品画廊</a></li>
     <li><a href="#methodology">方法论</a></li>
@@ -1906,6 +2026,7 @@
 <div class="nav-mobile-menu" id="mobile-menu">
   <ul class="nav-mobile-links">
     <li><a href="#hero" onclick="closeMobileMenu()">首页</a></li>
+    <li><a href="#experience" onclick="closeMobileMenu()">职业履历</a></li>
     <li><a href="#battles" onclick="closeMobileMenu()">标杆案例</a></li>
     <li><a href="#vault" onclick="closeMobileMenu()">作品画廊</a></li>
     <li><a href="#methodology" onclick="closeMobileMenu()">方法论</a></li>
@@ -1947,7 +2068,7 @@
             <div class="stat-label">政企规划项目</div>
           </div>
           <div>
-            <div class="stat-num">40<span style="font-size:22px">万+</span></div>
+            <div class="stat-num">50<span style="font-size:22px">万+</span></div>
             <div class="stat-label">单条爆款播放量</div>
           </div>
           <div>
@@ -1989,6 +2110,47 @@
   <div class="scroll-cue">
     <span>Scroll</span>
     <div class="scroll-line"></div>
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-eyebrow reveal">Experience · 职业履历</div>
+    <h2 class="section-title reveal" style="transition-delay:.08s">
+      公司<span class="hl">任职履历</span>
+    </h2>
+
+    <div class="exp-timeline">
+
+      <div class="exp-item reveal" style="transition-delay:.1s">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <div>
+              <div class="exp-company">南京运享通信息科技公司</div>
+              <div class="exp-role">智慧体育售前规划负责人 & 新媒体运营负责人</div>
+            </div>
+            <div class="exp-period">2020.4 — 至今</div>
+          </div>
+          <p class="exp-desc">最初担任新媒体负责人，后因深谙业务逻辑被调任至核心售前规划岗，横跨前端获客与后端项目落地，深度参与重庆市体育局"三张清单"、南京运动积分银行、镇江市体育大市口等项目。</p>
+        </div>
+      </div>
+
+      <div class="exp-item reveal" style="transition-delay:.2s">
+        <div class="exp-dot"></div>
+        <div class="exp-content">
+          <div class="exp-header">
+            <div>
+              <div class="exp-company">南京通惠易教育科技公司</div>
+              <div class="exp-role">新媒体运营</div>
+            </div>
+            <div class="exp-period">2017.6 — 2020.4</div>
+          </div>
+          <p class="exp-desc">全面负责公司研学业务的新媒体内容策划与日常运营，精准把握家长端（教育焦虑）与学生端（体验诉求）的痛点，输出高质量的营地招募与品牌传播内容。</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -2066,11 +2228,11 @@
             <div class="battle-result-label">量化成效</div>
             <div class="battle-result-row">
               <div>
-                <div class="result-num counter" data-target="2000">0</div>
-                <div class="result-desc">起号粉丝增量 (仅20天)</div>
+                <div class="result-num counter" data-target="2500" data-suffix="+">0</div>
+                <div class="result-desc">起号粉丝增量（20天）</div>
               </div>
               <div>
-                <div class="result-num">40万+</div>
+                <div class="result-num">50万+</div>
                 <div class="result-desc">单条爆款自然播放量</div>
               </div>
             </div>
@@ -2604,14 +2766,14 @@
 
 <section id="vision" class="section">
   <div class="container">
-    <div class="section-eyebrow reveal">Vision · 入职百天规划</div>
+    <div class="section-eyebrow reveal">Vision · 入职规划</div>
     <h2 class="section-title reveal" style="transition-delay:.08s">
       综合营地与大客业务的<span class="hl">破局推演</span>
     </h2>
 
     <p class="vision-intro reveal" style="transition-delay:.14s">
       面向"研学+酒店+疗养"多业态并存的商业场景，单纯的流量获取已不足以支撑整体发展。<br>
-      以下是我对新岗位前 100 天的初步业务推演，旨在通过数字化基建与内容战略，快速为前端销售与业务增长提供实质性赋能。
+      以下是我的初步业务推演，旨在通过数字化基建与内容战略，快速为前端销售与业务增长提供实质性赋能。
     </p>
 
     <div class="phases-grid">
@@ -2757,7 +2919,7 @@
       const step = Math.max(1, Math.ceil(target / 55));
       const t = setInterval(() => {
         n = Math.min(n + step, target);
-        el.textContent = n.toLocaleString();
+        el.textContent = n.toLocaleString() + (el.dataset.suffix || '');
         if (n >= target) clearInterval(t);
       }, 28);
       cntObs.unobserve(el);
